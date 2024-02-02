@@ -1,0 +1,42 @@
+.banner h1  {
+	height: 185px;
+	font-size: 80px;
+	color: darkgoldenrod;
+	position: sticky;
+	top: 0;
+	margin-top: 0;
+	z-index: 50;
+	background-image: url("https://i.pinimg.com/564x/b5/0a/12/b50a129d48a9c343a0aa43e69158cbb2.jpg");
+}
+
+div {
+	margin-top: 40px;
+
+}
+
+.textberserk{
+
+	font-family: calibrir;
+	font-size: 35px ;
+	height: auto;
+	width: 1450px;
+	margin-left: 25px;
+	margin-top: ;
+	border: 6px solid darkred;	
+	display: inline-block;
+	overflow: auto;
+	
+}
+
+.imgberserk {
+	
+
+}
+
+.kentaro{
+	position: absolute;
+	top: 250px;
+	left: 1500px;
+}
+
+
