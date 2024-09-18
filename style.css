@@ -1,35 +1,56 @@
-/* Posicionamos el contenedor más a la derecha */
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('fondo/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+
 .container {
-    position: absolute;
-    right: 10%; /* Ajusta este valor para moverlo más o menos a la derecha */
-    bottom: 10; /* Inicia desde abajo */
+    position: relative;
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     max-width: 600px;
-    width: 90%; /* Se ajusta para pantallas más pequeñas */
+    width: 90%; 
+    z-index: 1; 
 }
 
-/* Animación personalizada para moverse de abajo hacia arriba */
+
 @keyframes slideFromBottom {
     0% {
-        transform: translateY(100vh); /* Comienza desde fuera de la vista en la parte inferior */
+        transform: translateY(100vh); 
         opacity: 0;
     }
     100% {
-        transform: translateY(0); /* Llega a su posición final */
+        transform: translateY(0); 
         opacity: 1;
     }
 }
 
-/* Aplicamos la animación al contenedor */
+
 .container.fade-in {
     animation: slideFromBottom 2s ease-in-out;
 }
 
-/* Otras animaciones */
+
+img.responsive-image {
+    width: 100%; 
+    height: auto;
+}
+
+
 .fade-in {
     animation: fadeIn 2s ease-in-out;
 }
@@ -46,30 +67,6 @@
     animation: zoomIn 1.5s ease-in-out;
 }
 
-/* Estilo general */
-body {
-    font-family: 'Arial', sans-serif;
-    background: url('fondo/fondo.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Estilo del contenedor */
-.container {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
-}
-
 /* Estilo del encabezado */
 header h1 {
     font-size: 2.5rem;
@@ -82,7 +79,7 @@ header p {
     color: #b3e5fc;
 }
 
-/* Estilo del slogan */
+
 .slogan {
     font-size: 1.5rem;
     font-weight: bold;
@@ -90,7 +87,7 @@ header p {
     color: #03a9f4;
 }
 
-/* Estilo de la cuenta regresiva */
+
 .countdown {
     margin: 2rem 0;
 }
@@ -125,49 +122,74 @@ header p {
     color: #b3e5fc;
 }
 
-/* Estilo del pie de página */
+
 footer p {
     font-size: 0.9rem;
     color: #ccc;
 }
 
-/* Responsividad con media queries */
-@media (max-width: 768px) {
-    .container {
-        right: 5%; /* Más a la izquierda en pantallas pequeñas */
-        padding: 1.5rem; /* Reducimos el padding */
+
+@media (max-width: 1168px) {
+    body {
+        flex-direction: column; 
     }
-    
+
+    .container {
+        position: static; 
+        margin-top: 1rem; 
+    }
+
     header h1 {
-        font-size: 2rem; /* Ajustamos el tamaño de fuente */
+        font-size: 2rem; 
     }
 
     header p, .slogan, .author p {
-        font-size: 1.2rem; /* Ajustamos el tamaño de fuente para párrafos */
+        font-size: 1.2rem; 
     }
 
     #countdown div {
-        font-size: 1.2rem; /* Ajustamos el tamaño de fuente en el contador */
+        font-size: 1.2rem; 
         padding: 0.8rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .container {
-        right: 2%; /* Aún más cerca del borde en pantallas muy pequeñas */
-        padding: 1rem; /* Reducimos el padding para pantallas muy pequeñas */
+        right: 5%;
+        padding: 1.5rem;
     }
     
     header h1 {
-        font-size: 1.8rem; /* Reducimos aún más el tamaño de fuente */
-    }
+        font-size: 2rem; 
 
     header p, .slogan, .author p {
-        font-size: 1rem; /* Ajustamos el tamaño de los párrafos */
+        font-size: 1.2rem; 
     }
 
     #countdown div {
-        font-size: 1rem; /* Reducimos el tamaño del contador */
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+}
+}
+
+@media (max-width: 480px) {
+    .container {
+        right: 2%; 
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem; 
+    }
+
+    header p, .slogan, .author p {
+        font-size: 1rem;
+    }
+
+    #countdown div {
+        font-size: 1rem;
         padding: 0.6rem;
     }
+
 }
