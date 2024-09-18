@@ -28,16 +28,7 @@ body {
 }
 
 
-@keyframes slideFromBottom {
-    0% {
-        transform: translateY(100vh); 
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); 
-        opacity: 1;
-    }
-}
+
 
 
 .container.fade-in {
