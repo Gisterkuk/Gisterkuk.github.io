@@ -1,6 +1,55 @@
+/* Posicionamos el contenedor más a la derecha */
+.container {
+    position: absolute;
+    right: 10%; /* Ajusta este valor para moverlo más o menos a la derecha */
+    bottom: 10; /* Inicia desde abajo */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 90%; /* Se ajusta para pantallas más pequeñas */
+}
+
+/* Animación personalizada para moverse de abajo hacia arriba */
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(100vh); /* Comienza desde fuera de la vista en la parte inferior */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Llega a su posición final */
+        opacity: 1;
+    }
+}
+
+/* Aplicamos la animación al contenedor */
+.container.fade-in {
+    animation: slideFromBottom 2s ease-in-out;
+}
+
+/* Otras animaciones */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.fade-in-delayed {
+    animation: fadeIn 3s ease-in-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 1.5s ease-in-out;
+}
+
+.zoom-in {
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+/* Estilo general */
 body {
-    font-family: Arial, sans-serif;
-    background: url(https://images.unsplash.com/photo-1725785897139-1a7834b62e2f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed; /* Reemplaza con la URL de tu imagen de fondo */
+    font-family: 'Arial', sans-serif;
+    background: url('fondo/fondo.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     margin: 0;
@@ -11,32 +60,37 @@ body {
     height: 100vh;
 }
 
+/* Estilo del contenedor */
 .container {
     text-align: center;
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    background: rgba(0, 0, 0, 0.7);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
 }
 
+/* Estilo del encabezado */
 header h1 {
     font-size: 2.5rem;
-    color: #00bcd4; /* Azul celeste */
+    color: #00bcd4;
 }
 
 header p {
     font-size: 1.5rem;
     margin-top: 0.5rem;
-    color: #b3e5fc; /* Azul muy claro */
+    color: #b3e5fc;
 }
 
+/* Estilo del slogan */
 .slogan {
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 1rem;
-    color: #03a9f4; /* Azul brillante */
+    color: #03a9f4;
 }
 
+/* Estilo de la cuenta regresiva */
 .countdown {
     margin: 2rem 0;
 }
@@ -49,28 +103,71 @@ header p {
 
 #countdown div {
     font-size: 1.5rem;
-    background: #0d47a1; /* Azul oscuro */
+    background: #0d47a1;
     color: #fff;
     padding: 1rem;
     border-radius: 4px;
 }
 
+/* Estilo del autor */
 .author {
     margin-top: 2rem;
 }
 
 .author h2 {
     font-size: 1.5rem;
-    color: #00bcd4; /* Azul celeste */
+    color: #00bcd4;
 }
 
 .author p {
     font-size: 1rem;
     margin: 0.5rem 0;
-    color: #b3e5fc; /* Azul muy claro */
+    color: #b3e5fc;
 }
 
+/* Estilo del pie de página */
 footer p {
     font-size: 0.9rem;
-    color: #ccc; /* Gris claro */
+    color: #ccc;
+}
+
+/* Responsividad con media queries */
+@media (max-width: 768px) {
+    .container {
+        right: 5%; /* Más a la izquierda en pantallas pequeñas */
+        padding: 1.5rem; /* Reducimos el padding */
+    }
+    
+    header h1 {
+        font-size: 2rem; /* Ajustamos el tamaño de fuente */
+    }
+
+    header p, .slogan, .author p {
+        font-size: 1.2rem; /* Ajustamos el tamaño de fuente para párrafos */
+    }
+
+    #countdown div {
+        font-size: 1.2rem; /* Ajustamos el tamaño de fuente en el contador */
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        right: 2%; /* Aún más cerca del borde en pantallas muy pequeñas */
+        padding: 1rem; /* Reducimos el padding para pantallas muy pequeñas */
+    }
+    
+    header h1 {
+        font-size: 1.8rem; /* Reducimos aún más el tamaño de fuente */
+    }
+
+    header p, .slogan, .author p {
+        font-size: 1rem; /* Ajustamos el tamaño de los párrafos */
+    }
+
+    #countdown div {
+        font-size: 1rem; /* Reducimos el tamaño del contador */
+        padding: 0.6rem;
+    }
 }

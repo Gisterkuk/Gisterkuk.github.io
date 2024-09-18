@@ -1,11 +1,11 @@
 const getFutureDate = (monthsAhead) => {
     const today = new Date();
     const futureDate = new Date(today.setMonth(today.getMonth() + monthsAhead));
-    futureDate.setHours(0, 0, 0, 0); // Establece la hora al inicio del día
+    futureDate.setHours(0, 0, 0, 0); 
     return futureDate.getTime();
 };
 
-const countdownDate = getFutureDate(12); // 12 meses adelante (1 año)
+const countdownDate = getFutureDate(12);
 
 const updateCountdown = () => {
     const now = new Date().getTime();
@@ -23,7 +23,7 @@ const updateCountdown = () => {
 
     if (distance < 0) {
         clearInterval(interval);
-        document.querySelector('.countdown').innerHTML = "<p>¡El sitio está en vivo ahora!</p>";
+        document.querySelector('.countdown').innerHTML = "<p class='fade-in'>¡El sitio está en vivo ahora!</p>";
     }
 };
 
