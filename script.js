@@ -1,11 +1,20 @@
-const getFutureDate = (monthsAhead) => {
+const getNextMondayEleven = () => {
     const today = new Date();
-    const futureDate = new Date(today.setMonth(today.getMonth() + monthsAhead));
-    futureDate.setHours(0, 0, 0, 0); 
+    let futureDate = new Date(today.getFullYear(), today.getMonth(), 11);
+
+    // Verifica si el día 11 ya pasó este mes o no es lunes, y si es así, muévete al siguiente mes
+    if (today > futureDate || futureDate.getDay() !== 1) {
+        futureDate = new Date(today.getFullYear(), today.getMonth() + 1, 11);
+        while (futureDate.getDay() !== 1) {
+            futureDate = new Date(futureDate.getFullYear(), futureDate.getMonth() + 1, 11);
+        }
+    }
+
+    futureDate.setHours(0, 0, 0, 0);
     return futureDate.getTime();
 };
 
-const countdownDate = getFutureDate(12);
+const countdownDate = getNextMondayEleven();
 
 const updateCountdown = () => {
     const now = new Date().getTime();
